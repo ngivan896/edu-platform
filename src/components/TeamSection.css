@@ -1,0 +1,95 @@
+.team-section {
+  background: #fff9f1;
+  padding: 6vw 0 4vw 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team-title {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  color: #6d2323;
+  font-size: 2.5vw;
+  font-weight: 700;
+  margin-bottom: 3vw;
+}
+.team-list {
+  display: flex;
+  gap: 3vw;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.team-card {
+  background: #fff;
+  border-radius: 1.2vw;
+  box-shadow: 0 4px 24px #e5d8c3;
+  padding: 2vw 2vw 1vw 2vw;
+  min-width: 220px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.team-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px #e5d8c3;
+}
+.team-avatar {
+  width: 5vw;
+  min-width: 60px;
+  height: 5vw;
+  min-height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1vw;
+  box-shadow: 0 2px 8px #e5d8c3;
+}
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3vw;
+}
+.team-name {
+  font-size: 1.2vw;
+  color: #6d2323;
+  font-weight: 700;
+}
+.team-role {
+  font-size: 1vw;
+  color: #a13a3a;
+  font-weight: 600;
+}
+.team-desc {
+  font-size: 0.95vw;
+  color: #3d2323;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .team-title {
+    font-size: 5vw;
+  }
+  .team-list {
+    flex-direction: column;
+    gap: 4vw;
+  }
+  .team-card {
+    max-width: 90vw;
+    min-width: 60vw;
+  }
+  .team-avatar {
+    width: 16vw;
+    height: 16vw;
+  }
+  .team-name {
+    font-size: 3vw;
+  }
+  .team-role {
+    font-size: 2.5vw;
+  }
+  .team-desc {
+    font-size: 2vw;
+  }
+}

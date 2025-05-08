@@ -1,0 +1,143 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/photo-1486299267070-83823f5448dd.jpeg') !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  z-index: 1;
+  filter: brightness(0.85);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.10) 100%
+  );
+  z-index: 2;
+}
+
+.hero-center {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-main-title {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 5vw;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-shadow: 0 4px 32px rgba(0,0,0,0.25);
+  margin-bottom: 1.2vw;
+  white-space: nowrap;
+}
+
+.hero-sub-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2vw;
+  color: #eaeaea;
+  font-weight: 500;
+  margin-bottom: 2vw;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 1vw 2.5vw;
+  font-size: 1.2vw;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.hero-btn:hover {
+  background: #fff;
+  color: #6d2323;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .hero-center {
+    padding: 0 15px;
+  }
+  .hero-main-title {
+    font-size: 7vw;
+    white-space: nowrap;
+  }
+  .hero-sub-title {
+    font-size: 3.5vw;
+  }
+  .hero-btn {
+    font-size: 2.5vw;
+    padding: 2vw 5vw;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .hero-main-title {
+    font-size: 6vw;
+  }
+  .hero-sub-title {
+    font-size: 2.5vw;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .hero-main-title {
+    font-size: 5.5vw;
+  }
+}
+
+@media (min-width: 1201px) {
+  .hero-main-title {
+    font-size: 4.5vw;
+  }
+}
+
+.typewriter .type-cursor {
+  display: inline-block;
+  width: 1ch;
+  color: #eaeaea;
+  animation: blink 0.9s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+ 

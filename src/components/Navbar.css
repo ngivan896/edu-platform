@@ -1,0 +1,191 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7em 3vw;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px) saturate(1.1);
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  border: none;
+  box-shadow: none;
+  color: #23243a;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.navbar-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.navbar-logo {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #23243a;
+  letter-spacing: -0.03em;
+  text-shadow: none;
+  padding-right: 2vw;
+}
+.navbar-menu {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6vw;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar-menu li {
+  position: relative;
+  z-index: 1;
+  background: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #23243a;
+  transition: color 0.22s;
+}
+.navbar-menu li::before {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #4f8cff 0%, #a13aff 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.32s cubic-bezier(.4,0,.2,1);
+  border-radius: 2px;
+}
+.navbar-menu li:hover::before,
+.navbar-menu li.active::before {
+  transform: scaleX(1);
+}
+.navbar-menu li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #4f8cff 0%, #a13aff 100%);
+  border-radius: 2px;
+  transition: width 0.22s cubic-bezier(.68,-0.55,.27,1.55), left 0.22s cubic-bezier(.68,-0.55,.27,1.55);
+  transform: translateX(-50%);
+}
+.navbar-menu li:hover::after,
+.navbar-menu li:active::after {
+  width: 80%;
+  left: 50%;
+}
+.navbar-menu li:hover,
+.navbar-menu li:active {
+  background: linear-gradient(90deg, #4f8cff 0%, #a13aff 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 800;
+}
+.navbar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1vw;
+}
+.navbar-search {
+  margin-right: 1vw;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.10);
+  border-radius: 50%;
+  padding: 0.3em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+.navbar-search svg {
+  display: block;
+  stroke: #fff;
+  opacity: 0.92;
+  transition: opacity 0.2s;
+}
+.navbar-search:hover {
+  background: #fff9f1;
+}
+.navbar-search:hover svg {
+  opacity: 1;
+  stroke: #6d2323;
+}
+.navbar-login-btn {
+  margin-left: 0.5vw;
+  padding: 0.45em 1.2em;
+  font-size: 1.05rem;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-weight: 700;
+  color: #fff9f1;
+  background: linear-gradient(90deg, #ff5858 0%, #ffc371 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  outline: none;
+}
+.navbar-login-btn:hover {
+  background: #fff9f1;
+  color: #6d2323;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 24px rgba(161,58,58,0.13);
+}
+.navbar-hamburger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  margin-left: 1vw;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .navbar-menu {
+    display: none;
+  }
+  .navbar-menu.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 2vw;
+    background: rgba(40, 20, 20, 0.98);
+    gap: 1.2vw;
+    padding: 1.2vw 2vw;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+  }
+  .navbar-hamburger {
+    display: block;
+  }
+  .navbar-right {
+    gap: 0.5vw;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.5em 2vw;
+  }
+  .navbar-logo {
+    font-size: 1.3rem;
+    padding-right: 1vw;
+  }
+  .navbar-login-btn {
+    font-size: 0.95rem;
+    padding: 0.4em 0.9em;
+  }
+}
+ 
