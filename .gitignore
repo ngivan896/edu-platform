@@ -38,4 +38,30 @@ yarn-error.log*
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db 
+Thumbs.db
+
+# Project specific
+/android/
+/.cursor/
+/.dotnet/
+/.dropbox_bi/
+/.m2/
+/.nbi/
+/.node_repl_history
+/3D Objects/
+/AppData/
+/AppMods/
+/Contacts/
+/Documents/
+/Downloads/
+/Dropbox/
+/Favorites/
+/Links/
+/Music/
+/Pictures/
+/PycharmProjects/
+/Recorded Calls/
+/SDK/
+/Saved Games/
+/Searches/
+/Videos/ 
