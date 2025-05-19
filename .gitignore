@@ -64,4 +64,6 @@ Thumbs.db
 /SDK/
 /Saved Games/
 /Searches/
-/Videos/ 
+/Videos/
+*.exe
+*.msi 
