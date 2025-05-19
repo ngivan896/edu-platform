@@ -5,6 +5,18 @@ import { motion, useInView } from 'framer-motion';
 import { gsap } from 'gsap';
 import './AboutSection.css';
 
+const isWebGLAvailable = () => {
+  try {
+    const canvas = document.createElement('canvas');
+    return !!(
+      window.WebGLRenderingContext &&
+      (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
+    );
+  } catch (e) {
+    return false;
+  }
+};
+
 const AboutSection = () => {
   const containerRef = useRef();
   const sceneRef = useRef();
@@ -16,6 +28,7 @@ const AboutSection = () => {
   const spheresRef = useRef([]);
   const spritesRef = useRef([]);
   const animatingRef = useRef(false);
+  const [webglSupported, setWebglSupported] = React.useState(true);
   
   const isInView = useInView(sectionRef, {
     once: false,
@@ -94,6 +107,10 @@ const AboutSection = () => {
       });
     });
   };
+
+  useEffect(() => {
+    setWebglSupported(isWebGLAvailable());
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -252,6 +269,22 @@ const AboutSection = () => {
       }
     }
   };
+
+  if (!webglSupported) {
+    return (
+      <section className="about-section">
+        <div className="about-content">
+          <div className="about-right">
+            <h1 className="main-title">We Are Offerist.</h1>
+            <p style={{color: '#a13a3a', fontWeight: 'bold', fontSize: 18, marginTop: 24}}>
+              当前设备或浏览器不支持 WebGL，3D 技能展示无法显示。<br />
+              请升级浏览器或更换设备以获得完整体验。
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="about-section" ref={sectionRef}>
